@@ -15,19 +15,16 @@ import java.util.ArrayList;
  */
 public class ProductService{
 
-    public ArrayList<Product> getListProducts(int categoryId, String text) {
-        if(categoryId == 0 && text == null){
-            return new ProductDAO().getAll();
-        }else if(categoryId != 0 && text == null){
-            return new ProductDAO().getProductsById(categoryId);
-        }else{
-            return new ProductDAO().getProductsByName("%"+text.toUpperCase()+"%");
-        }
+    public ArrayList<Product> getListProducts(){
+        return new ProductDAO().getAll();
+    } 
+        
+    public ArrayList<Product> getListProducts(int categoryId){
+        return new ProductDAO().getProductsById(categoryId);
     }
     
-    public ArrayList<Product> getListProducts(){
-        System.out.println("CHECK");
-        return new ProductDAO().getAll();
+    public ArrayList<Product> getListProducts(String text){
+        return new ProductDAO().getProductsByName("%"+text.toUpperCase()+"%");
     }
     
     public Product getProduct(int id) {

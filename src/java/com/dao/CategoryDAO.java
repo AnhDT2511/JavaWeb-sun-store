@@ -41,7 +41,7 @@ public class CategoryDAO implements InterfaceDAO<Category> {
             }
             return list;
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e);
         } finally {
             MySQLConnection.closeResultSet(rs);
             MySQLConnection.closePreparedStatement(ps);
@@ -67,7 +67,7 @@ public class CategoryDAO implements InterfaceDAO<Category> {
                 return category;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e);
         } finally {
             MySQLConnection.closeResultSet(rs);
             MySQLConnection.closePreparedStatement(ps);

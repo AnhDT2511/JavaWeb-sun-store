@@ -47,7 +47,7 @@ public class ProductDAO implements InterfaceDAO<Product> {
             }
             return list;
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e);
         } finally {
             com.connection.MySQLConnection.closeResultSet(rs);
             com.connection.MySQLConnection.closePreparedStatement(ps);
@@ -79,7 +79,7 @@ public class ProductDAO implements InterfaceDAO<Product> {
             }
             return list;
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e);
         } finally {
             com.connection.MySQLConnection.closeResultSet(rs);
             com.connection.MySQLConnection.closePreparedStatement(ps);
@@ -111,7 +111,7 @@ public class ProductDAO implements InterfaceDAO<Product> {
             }
             return list;
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e);
         } finally {
             com.connection.MySQLConnection.closeResultSet(rs);
             com.connection.MySQLConnection.closePreparedStatement(ps);
@@ -142,7 +142,7 @@ public class ProductDAO implements InterfaceDAO<Product> {
                 return product;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e);
         } finally {
             com.connection.MySQLConnection.closeResultSet(rs);
             com.connection.MySQLConnection.closePreparedStatement(ps);
@@ -168,7 +168,7 @@ public class ProductDAO implements InterfaceDAO<Product> {
             ps.setString(7, obj.getImageUrl());
             check = ps.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e);
         } finally {
             MySQLConnection.closePreparedStatement(ps);
             MySQLConnection.closeConnection(connection);
@@ -194,7 +194,7 @@ public class ProductDAO implements InterfaceDAO<Product> {
             ps.setInt(8, id);
             check = ps.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e);
         } finally {
             MySQLConnection.closePreparedStatement(ps);
             MySQLConnection.closeConnection(connection);

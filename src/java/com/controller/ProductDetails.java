@@ -36,9 +36,7 @@ public class ProductDetails extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             int id = Integer.valueOf(request.getParameter("id"));
-
             Product product = new ProductService().getProduct(id);
-            System.out.println(product);
             if(product != null){
                 request.setAttribute("product", product);
                 request.getRequestDispatcher("product-detail.jsp").forward(request, response);

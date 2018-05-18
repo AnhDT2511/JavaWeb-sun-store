@@ -85,7 +85,10 @@
                                                 </div>
                                             </div>
                                             <div class="description text-center">
-                                                <h6><a href="product?id=${i.id}">${i.name}</a></h6>
+                                                <c:url value="product" var="url">
+                                                    <c:param name="id" value="${i.id}"/>
+                                                </c:url>
+                                                <h6><a href="${url}">${i.name}</a></h6>
                                                 <p>${i.price}<sup>đ</sup></p>
                                             </div>
                                         </div>

@@ -10,17 +10,16 @@ import java.sql.*;
  */
 public class MySQLConnection {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/sunchoshop";
-    private static final String USER = "root";
-    private static final String PASSWORD = "123456";
+    private static final String URL = "jdbc:mysql://den1.mysql4.gear.host:3306/sunstore";
+    private static final String USER = "sunstore";
+    private static final String PASSWORD = "$s25111211";
 
     public static Connection getMySQLConnection() {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException e) {
-            System.out.println("Where is your MySQL JDBC Driver?");
-            e.printStackTrace();
+            System.out.println("Where is your MySQL JDBC Driver? | " + e.getMessage());
             return null;
         }
 
@@ -30,8 +29,7 @@ public class MySQLConnection {
         try {
             connection = DriverManager.getConnection(URL, USER, PASSWORD);
         } catch (SQLException e) {
-            System.out.println("Connection Failed! Check output console");
-            e.printStackTrace();
+            System.out.println("Connection Failed! Check output console. | " + e.getMessage());
             return null;
         }
         return connection;

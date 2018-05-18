@@ -3,10 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Shado/Documents/NetBeansProjects/SunChoShop/web/products.jsp</file>
-            <file>file:/C:/Users/Shado/Documents/NetBeansProjects/SunChoShop/src/java/com/controller/Controller.java</file>
-            <file>file:/C:/Users/Shado/Documents/NetBeansProjects/SunChoShop/src/java/com/service/ProductService.java</file>
-            <file>file:/C:/Users/Shado/Documents/NetBeansProjects/SunChoShop/web/index.jsp</file>
+            <file>file:/C:/Users/anhdt45/Documents/GitHub/sun-store/src/java/com/controller/ProductController.java</file>
+            <file>file:/C:/Users/anhdt45/Documents/GitHub/sun-store/web/products.jsp</file>
+            <file>file:/C:/Users/anhdt45/Documents/GitHub/sun-store/src/java/com/service/ProductService.java</file>
         </group>
     </open-files>
 </project-private>

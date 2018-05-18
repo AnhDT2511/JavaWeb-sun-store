@@ -36,21 +36,31 @@ public class ProductController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            
+
             String textSearch = request.getParameter("textSearch");
             int categoryId = 0;
-            try{
+            try {
                 categoryId = Integer.valueOf(request.getParameter("categoryId"));
-            }catch(NumberFormatException e){
+            } catch (NumberFormatException e) {
+                System.out.println(e);
                 categoryId = 0;
             }
             
-            ArrayList<Product> list = new ProductService().getListProducts(categoryId, textSearch);
-            if(list != null){
+            ArrayList<Product> list = new ArrayList<>();
+
+            if (categoryId == 0 && textSearch == null) {
+                list = new ProductService().getListProducts();
+            } else if (categoryId != 0 && textSearch == null) {
+                list = new ProductService().getListProducts(categoryId);
+            } else {
+                list = new ProductService().getListProducts(textSearch);
+            }
+            
+            if (list != null) {
                 request.setAttribute("list", list);
                 request.setAttribute("cId", categoryId);
                 request.getRequestDispatcher("products.jsp").forward(request, response);
-            }else{
+            } else {
                 response.sendRedirect("index.jsp");
             }
         }
