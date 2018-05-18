@@ -1,0 +1,380 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    font-size: 14px;
+    font-family: "Segoe UI";
+    color: #424242;
+}
+
+#main-contain {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+
+/*===== NAV =====*/
+
+#main-contain .navbar {
+    z-index: 1000;
+}
+
+#main-contain .bg-dark {
+    background-color: transparent !important;
+}
+
+#main-contain .navbar-dark .navbar-brand {
+    color: #424242;
+}
+
+#main-contain .navbar .nav-item a {
+    margin-right: .7rem;
+    margin-left: .7rem;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    font-weight: 600;
+    line-height: 16px;
+    color: #616161 !important;
+    border: 1px solid transparent;
+}
+
+#main-contain .navbar .nav-item a:hover {
+    color: #ed1d27 !important;
+    /* border-bottom: 1px solid #ff9916; */
+    transition: 0.6s;
+}
+
+
+/*===== Intro =====*/
+
+#intro {
+    height: 95%;
+    position: relative;
+    background: #ffffff url(../img/bg-body.png) no-repeat top center;
+}
+
+#intro .intro-des h1 {
+    margin: 0 0 30px;
+}
+
+#intro .result-spec h4 {
+    margin: 15px 4px;
+}
+
+#intro .intro-des p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+#intro .intro-des .btn-learn-more {
+    color: #424242;
+    padding: 9px 25px 8px;
+    border: 1px solid #424242;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+#intro .intro-des .btn-learn-more:hover {
+    color: #ed1d27;
+    border: 1px solid #ed1d27;
+    text-decoration: none;
+    transition: 0.6s;
+}
+
+#intro .intro-des .btn-mockup:hover {
+    color: #d0d5da;
+    background-color: transparent;
+    color: #ed1d27;
+    border: 1px solid #ed1d27;
+    text-decoration: none;
+    transition: 0.8s;
+}
+
+
+/*===== Intro lucky-number=====*/
+
+#lucky-number {
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 18px;
+    margin-bottom: 20px;
+    float: left;
+}
+
+#lucky-number>div {
+    padding: 7px;
+    border-radius: 50%;
+    background: transparent;
+    display: inline-block;
+    border: 3px solid #ed1d27;
+    width: 80px;
+    height: 80px;
+    margin: 4px;
+}
+
+#lucky-number div>span {
+    border-radius: 50%;
+    background: transparent;
+    display: inline-block;
+    font-weight: 500;
+    font-size: 36px;
+    color: #ed1d27;
+}
+
+
+/*===== List Table =====*/
+
+#list-result {
+    position: relative;
+    padding: 120px 0 200px;
+    background: #ffffff url(../img/bg-body.png) no-repeat top center;
+}
+
+
+/*====== Custom Tables ======*/
+
+#list {
+    font-size: 14px;
+}
+
+#list-result h3 {
+    color: #ed1d27;
+    margin-bottom: 40px;
+}
+
+.table {
+    border-bottom: 1px solid #E2E2E2;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.table>thead>tr>th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #ddd;
+    color: #555 !important;
+}
+
+.table>thead:first-child>tr:first-child>th {
+    border-top: 0;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>th {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
+
+.table>tbody>tr>td>a {
+    color: #ed1d27;
+}
+
+.table>thead>tr>th:hover {
+    cursor: pointer;
+}
+
+.table>thead>tr>th:focus {
+    outline-color: #434857;
+}
+
+.table>thead>tr>th .size {
+    font-size: 17px;
+    padding-top: 2px;
+}
+
+
+/* Tables - Border */
+
+.table-bordered {
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.table-bordered>tbody>tr>td,
+.table-bordered>tbody>tr>th,
+.table-bordered>tfoot>tr>td,
+.table-bordered>tfoot>tr>th,
+.table-bordered>thead>tr>td,
+.table-bordered>thead>tr>th {
+    border-bottom: 1px solid #E2E2E2;
+}
+
+.table-bordered>thead>tr>td,
+.table-bordered>thead>tr>th {
+    border-bottom-width: 2px;
+}
+
+
+/* Customer - Datables */
+
+.dataTables_length {
+    float: left;
+}
+
+#list_filter {
+    float: right;
+}
+
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 15px;
+    font-weight: 400;
+    color: #555;
+}
+
+.dataTables_info {
+    color: #555;
+    float: left;
+}
+
+
+/* Customer - Select */
+
+label select {
+    margin: 0 5px;
+    border: 1px solid #ddd;
+    color: #555;
+    background-color: transparent;
+    padding: 4px;
+}
+
+label select:focus {
+    outline-color: #aaaaaa;
+}
+
+label select option {
+    background-color: rgb(255, 255, 255);
+}
+
+
+/* Customer - Search */
+
+label input {
+    margin-left: 10px;
+    border: 1px solid #ddd;
+    color: #555;
+    background-color: transparent;
+    padding: 4px 5px 4px 8px;
+    font-weight: normal;
+    width: 200px;
+}
+
+label input:focus {
+    outline-color: #aaaaaa;
+}
+
+
+/* Customer - Pagination */
+
+.dataTables_paginate {
+    float: right;
+}
+
+.paging_simple_numbers>a {
+    color: #555;
+    width: 80px;
+    height: 32px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    display: inline-block;
+    text-align: center;
+}
+
+.paging_simple_numbers>a:first-child {
+    border-right: none;
+}
+
+.paging_simple_numbers>span>a {
+    color: #555;
+    border: 1px solid #ddd;
+    width: 32px;
+    height: 32px;
+    padding: 5px;
+    display: inline-block;
+    text-align: center;
+    border-right: none;
+}
+
+.paging_simple_numbers a:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: #ed1d27;
+}
+
+.ellipsis {
+    color: #555;
+    width: 32px;
+    height: 32px;
+    padding: 5px;
+    display: inline-block;
+    border: 1px solid #ddd;
+    text-align: center;
+    border-right: none;
+}
+
+
+/* Customer - Responsivve */
+
+@media(max-width: 500px) {
+    #example_filter {
+        float: none;
+    }
+    label select {
+        margin: 0 5px 0 20px;
+    }
+    .dataTables_paginate {
+        float: left;
+        margin-top: 10px;
+    }
+    .paging_simple_numbers>a {
+        width: 65px;
+    }
+    .paging_simple_numbers>span>a {
+        width: 28px;
+    }
+}
+
+
+/* ==== Footer ==== */
+
+.footer {
+    padding: 20px 0;
+    background-color: #e6e6e6;
+}
+
+
+/*
+ *  STYLE 3
+ */
+
+#style-3::-webkit-scrollbar-track {
+    background-color: #F5F5F5;
+    border-radius: 0;
+}
+
+#style-3::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+}
+
+#style-3::-webkit-scrollbar-thumb {
+    background-color: #929ba3;
+    border-radius: 0;
+}
