@@ -10,9 +10,9 @@ import java.sql.*;
  */
 public class MySQLConnection {
 
-    private static final String URL = "jdbc:mysql://den1.mysql4.gear.host:3306/sunstore";
-    private static final String USER = "sunstore";
-    private static final String PASSWORD = "$s25111211";
+    private static final String URL = "jdbc:mysql://localhost:3306/sunchoshop";
+    private static final String USER = "root";
+    private static final String PASSWORD = "123456";
 
     public static Connection getMySQLConnection() {
 
