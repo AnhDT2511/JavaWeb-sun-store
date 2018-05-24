@@ -47,7 +47,7 @@ public class ProductDAO implements InterfaceDAO<Product> {
             }
             return list;
         } catch (SQLException e) {
-            System.out.println(e);
+            System.err.println(e);
         } finally {
             com.connection.MySQLConnection.closeResultSet(rs);
             com.connection.MySQLConnection.closePreparedStatement(ps);
@@ -58,7 +58,7 @@ public class ProductDAO implements InterfaceDAO<Product> {
     
     public ArrayList<Product> getProductsById(int id) {
         ArrayList<Product> list = new ArrayList<>();
-        String sql = "SELECT * FROM product WHERE Category_Id = ?";
+        String sql = "SELECT * FROM product WHERE CategoryId = ?";
         try {
             connection = MySQLConnection.getMySQLConnection();
             ps = connection.prepareStatement(sql);
@@ -79,7 +79,7 @@ public class ProductDAO implements InterfaceDAO<Product> {
             }
             return list;
         } catch (SQLException e) {
-            System.out.println(e);
+            System.err.println(e);
         } finally {
             com.connection.MySQLConnection.closeResultSet(rs);
             com.connection.MySQLConnection.closePreparedStatement(ps);
@@ -111,7 +111,7 @@ public class ProductDAO implements InterfaceDAO<Product> {
             }
             return list;
         } catch (SQLException e) {
-            System.out.println(e);
+            System.err.println(e);
         } finally {
             com.connection.MySQLConnection.closeResultSet(rs);
             com.connection.MySQLConnection.closePreparedStatement(ps);
@@ -142,7 +142,7 @@ public class ProductDAO implements InterfaceDAO<Product> {
                 return product;
             }
         } catch (SQLException e) {
-            System.out.println(e);
+            System.err.println(e);
         } finally {
             com.connection.MySQLConnection.closeResultSet(rs);
             com.connection.MySQLConnection.closePreparedStatement(ps);
@@ -154,7 +154,7 @@ public class ProductDAO implements InterfaceDAO<Product> {
     @Override
     public boolean add(Product obj) {
         int check = 0;
-        String sql = "INSERT INTO product(Category_Id, Name, Price, Size, Description, Status, Image_Url)"
+        String sql = "INSERT INTO product(CategoryId, Name, Price, Size, Description, Status, ImageUrl)"
                 + " VALUES(?, ?, ?, ?, ?, ?, ?)"; 
         try {
             connection = MySQLConnection.getMySQLConnection();
@@ -168,7 +168,7 @@ public class ProductDAO implements InterfaceDAO<Product> {
             ps.setString(7, obj.getImageUrl());
             check = ps.executeUpdate();
         } catch (SQLException e) {
-            System.out.println(e);
+            System.err.println(e);
         } finally {
             MySQLConnection.closePreparedStatement(ps);
             MySQLConnection.closeConnection(connection);
@@ -179,7 +179,7 @@ public class ProductDAO implements InterfaceDAO<Product> {
     @Override
     public boolean updateById(Product obj, int id) {
         int check = 0;
-        String sql = "UPDATE product SET Category_Id = ?, Name = ?, Price = ?, Size = ?, Description = ?, Status = ?, Image_Url = ? "
+        String sql = "UPDATE product SET CategoryId = ?, Name = ?, Price = ?, Size = ?, Description = ?, Status = ?, ImageUrl = ? "
                    + "WHERE Id = ?";
         try {
             connection = MySQLConnection.getMySQLConnection();
@@ -194,7 +194,7 @@ public class ProductDAO implements InterfaceDAO<Product> {
             ps.setInt(8, id);
             check = ps.executeUpdate();
         } catch (SQLException e) {
-            System.out.println(e);
+            System.err.println(e);
         } finally {
             MySQLConnection.closePreparedStatement(ps);
             MySQLConnection.closeConnection(connection);

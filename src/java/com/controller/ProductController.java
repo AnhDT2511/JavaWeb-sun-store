@@ -46,7 +46,7 @@ public class ProductController extends HttpServlet {
                 categoryId = 0;
             }
             
-            ArrayList<Product> list = new ArrayList<>();
+            ArrayList<Product> list = new ArrayList<>();      
 
             if (categoryId == 0 && textSearch == null) {
                 list = new ProductService().getListProducts();

@@ -72,6 +72,98 @@ body {
     background-color: #ed1d27;
 }
 
+
+/* Dropdown Menu */
+
+.dropdown-menu {
+    padding: 0 0 1rem 0;
+    margin: .75rem 0 0;
+    border-radius: 0;
+    left: -50%;
+    min-width: 320px;
+    border: 1px solid #cccccc;
+}
+
+
+/* .dropdown-menu:after {
+    bottom: 100%;
+    left: 30%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-bottom-color: #ccc;
+    border-width: 8px;
+    margin-left: -8px;
+} */
+
+.dropdown-toggle::after {
+    border-right: 0;
+    border-left: 0;
+}
+
+.dropdown-item {
+    padding: 0 2rem 0 1rem;
+    margin-bottom: .5rem;
+}
+
+.dropdown-item:focus,
+.dropdown-item:hover {
+    background-color: #ffffff;
+}
+
+.shopping-cart .item img {
+    margin-right: 1rem;
+    width: 4.5rem;
+}
+
+.shopping-cart .shopping-cart-items {
+    padding: 1rem 0 0;
+    overflow-y: scroll;
+    max-height: 16.2rem;
+}
+
+.shopping-cart .item .media-body .item-name {
+    margin: .75rem 0 .25rem 0;
+    font-size: .915rem;
+}
+
+.shopping-cart .item .media-body .item-price {
+    color: #ed1d27;
+    font-size: .85rem;
+}
+
+.shopping-cart .item .media-body .item-quantity {
+    font-size: .85rem;
+    float: right;
+}
+
+.shopping-cart .shopping-cart-footer {
+    border-top: 1px solid #e7e7e7;
+    padding-top: .8rem;
+    padding: .8rem 1rem 1rem;
+    font-size: .915rem;
+}
+
+.shopping-cart .shopping-cart-footer .btn {
+    width: 100%;
+    margin-top: .4rem;
+    display: inline-block;
+}
+
+.shopping-cart .shopping-cart-footer>div>p {
+    margin-bottom: .5rem;
+}
+
+.shopping-cart .shopping-cart-footer>div>p>strong {
+    color: #ed1d27;
+}
+
+
+/* Search Form */
+
 .navbar .form-control {
     padding: .3rem .5rem;
     font-size: .9rem;
@@ -143,6 +235,24 @@ body {
 }
 
 #style-3::-webkit-scrollbar-thumb {
-    background-color: #929ba3;
+    background-color: #ccc;
+    border-radius: 0;
+}
+
+
+/**/
+
+#style-4::-webkit-scrollbar-track {
+    background-color: #F5F5F5;
+    border-radius: 0;
+}
+
+#style-4::-webkit-scrollbar {
+    width: 5px;
+    background-color: #F5F5F5;
+}
+
+#style-4::-webkit-scrollbar-thumb {
+    background-color: #dbdbdb;
     border-radius: 0;
 }

@@ -23,17 +23,16 @@
         <link rel="stylesheet" type="text/css" href="assets/css/common.css">
         <link rel="stylesheet" type="text/css" href="assets/css/product-details.css">
     </head>
-    <body id="style-3" data-spy="scroll" data-target=".navbar" data-offset="50">
-
+    <body id="style-3">
         <!-- Nav -->
-        <%@include file="nav.jsp"%> 
+        <%@include file="templates/nav.jsp"%> 
 
         <!-- Cover -->
         <div id="main-contain" class="container">
             <div class="row">
                 <div class="col-md-6">
                     <div class="img mg-top-15">
-                        <img src="${product.imageUrl}" alt="${product.name}">
+                        <img src="assets/images/${product.imageUrl}" alt="${product.name}">
                     </div>
                 </div>
                 <div class="col-md-1"></div>

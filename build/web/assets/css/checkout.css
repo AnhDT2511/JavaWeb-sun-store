@@ -1,0 +1,93 @@
+.left-size{
+    padding-right: 50px;
+}
+
+.checkout-list{
+    padding: 0;
+}
+
+.checkout-list .item{
+    list-style: none;
+    display: block;
+    border: 1px solid #dadada;
+    border-radius: .25rem;
+    margin: .25rem 0 .75rem;
+    padding: .5rem .75rem;
+}
+
+.checkout-list .result{
+    list-style: none;
+    display: block;
+    border: 1px solid #dadada;
+    border-radius: .25rem;
+    margin: .25rem 0 .75rem;
+    padding: .85rem .75rem .5rem;
+}
+
+.checkout-list .result p{
+    margin-bottom: .55rem;
+}
+
+.checkout-list .result p a{
+    color: #ed1d27;
+}
+
+.checkout-list .result p a:focus{
+    outline: none;
+}
+
+.checkout-list .result strong{
+    color: #ed1d27;
+    margin-left: 5px;
+}
+
+.checkout-list li img{
+    width: 10%;
+}
+.checkout-list li .name{
+    width: 45%;
+    display: inline-block;
+    font-weight: 500;
+    margin-left: 1rem;
+}
+
+.checkout-list li .price{
+    width: 18%;
+    display: inline-block;
+}
+
+.checkout-list li .quantity{
+    width: 5%;
+    display: inline-block;
+}
+
+.checkout-list li .update{
+    width: 15%;
+    display: inline-block;
+    text-align: center;
+}
+
+.checkout-list li .update .btn {
+    padding: .25rem .375rem;
+}
+
+.input-form .form-control {
+    padding: 0.35rem .75rem;
+}
+
+@media (max-width: 768px) {
+    .left-size{
+        padding-right: 15px;
+    }
+    
+    .checkout-list li .price{
+        width: 30%;
+    }
+    .checkout-list li .update{
+        width: 100%;
+        text-align: right;
+    }
+    .checkout-list li .update .btn {
+        padding: .1rem .25rem;
+    }
+}

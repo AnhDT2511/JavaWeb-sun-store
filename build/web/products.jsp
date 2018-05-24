@@ -25,9 +25,8 @@
         <link rel="stylesheet" type="text/css" href="assets/css/products.css">
     </head>
     <body id="style-3" data-spy="scroll" data-target=".navbar" data-offset="50">
-
         <!-- Nav -->
-        <%@include file="nav.jsp"%> 
+        <%@include file="templates/nav.jsp"%> 
 
         <!-- Cover -->
         <div id="main-contain" class="container">
@@ -41,7 +40,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <%@include file="sidebar-nav.jsp"%> 
+                                <%@include file="templates/sidebar-nav.jsp"%> 
                             </div>
                         </div>
                     </div>
@@ -75,7 +74,7 @@
                                                 </div>
                                             </c:if>
                                             <div class="img">
-                                                <img src="${i.imageUrl}" alt="">
+                                                <img src="assets/images/${i.imageUrl}" alt="">
                                                 <div class="overlay">
                                                     <p>
                                                         <a href="">
