@@ -1,0 +1,158 @@
+DROP SCHEMA IF EXISTS `sunstore` ;
+
+-- -----------------------------------------------------
+-- Schema sunstore
+-- -----------------------------------------------------
+
+CREATE SCHEMA IF NOT EXISTS `sunstore` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `sunstore` ;
+
+-- -----------------------------------------------------
+-- Table `sunstore`.`category`
+-- -----------------------------------------------------
+CREATE TABLE `category` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,  
+  `Name` nvarchar(100) DEFAULT NULL,
+  `Status` int(11) DEFAULT NULL,
+  `Created_Time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`Id`)
+)
+ENGINE = InnoDB;
+
+INSERT INTO `sunstore`.`category` (`Name`, `Status`) VALUES ('Balo', '1');
+INSERT INTO `sunstore`.`category` (`Name`, `Status`) VALUES ('Túi tote', '1');
+INSERT INTO `sunstore`.`category` (`Name`, `Status`) VALUES ('Túi bao tử', '1');
+INSERT INTO `sunstore`.`category` (`Name`, `Status`) VALUES ('Túi đeo vai', '1');
+INSERT INTO `sunstore`.`category` (`Name`, `Status`) VALUES ('Túi văn phòng', '1');
+
+
+-- -----------------------------------------------------
+-- Table `sunstore`.`product`
+-- -----------------------------------------------------
+CREATE TABLE `product` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `CategoryId` int(11) DEFAULT NULL,
+  `Name` nvarchar(100) DEFAULT NULL,
+  `Price` nvarchar(45) DEFAULT NULL,
+  `Size` nvarchar(45) DEFAULT NULL,
+  `Description` nvarchar(1999) DEFAULT NULL,
+  `Status` int(11) DEFAULT NULL,
+  `ImageUrl` nvarchar(100) DEFAULT NULL,
+  `CreatedTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`Id`),
+  FOREIGN KEY (`CategoryId`) REFERENCES `category`(`Id`)
+)
+ENGINE = InnoDB;
+
+INSERT INTO `sunstore`.`product` (`CategoryId`, `Name`, `Price`, `Size`, `Description`, `Status`, `ImageUrl`) VALUES ('1', 'SOLDIER GREEN/TAN', '2200000', '29 x 45 x 13 cm - 21.5L ', 'Balo vải bố dày có quai và đáy làm bằng da bò tự nhiên', '1', 'soldier-green-tan.jpg');
+INSERT INTO `sunstore`.`product` (`CategoryId`, `Name`, `Price`, `Size`, `Description`, `Status`, `ImageUrl`) VALUES ('1', 'SOLDIER CARA/BLACK', '2234000', '29 x 45 x 13 cm - 21.5L', 'Balo vải bố dày có quai và đáy làm bằng da bò tự nhiên. Một ngăn dây kéo lớn mặt trước. Một ngăn dây kéo hông phải, 1 túi đắp hông trái. Một ngăn dây kéo bên trong và 2 túi nhỏ.', '2', 'soldier-cara-black.jpg');
+INSERT INTO `sunstore`.`product` (`CategoryId`, `Name`, `Price`, `Size`, `Description`, `Status`, `ImageUrl`) VALUES ('1', 'SOLDIER JET/BLACK', '2234000', '29 x 45 x 13 cm - 21.5L', 'Balo vải bố dày có quai và đáy làm bằng da bò tự nhiên. Một ngăn dây kéo lớn mặt trước. Một ngăn dây kéo hông phải, 1 túi đắp hông trái. Một ngăn dây kéo bên trong và 2 túi nhỏ.', '1', 'soldier-jet-black.jpg');
+INSERT INTO `sunstore`.`product` (`CategoryId`, `Name`, `Price`, `Size`, `Description`, `Status`, `ImageUrl`) VALUES ('1', 'HIRO NAVY/BLACK', '2200000', '29 x 45 x 13 cm - 21.5L', 'Balo vải bố dày có quai và đáy làm bằng da bò tự nhiên. Một ngăn dây kéo lớn mặt trước. Một ngăn dây kéo hông phải, 1 túi đắp hông trái. Một ngăn dây kéo bên trong và 2 túi nhỏ.', '1', 'hiro-navy-black.jpg');
+INSERT INTO `sunstore`.`product` (`CategoryId`, `Name`, `Price`, `Size`, `Description`, `Status`, `ImageUrl`) VALUES ('1', 'HIRO RED/BEIGE', '2200000', '29 x 45 x 13 cm - 21.5L', 'Balo vải bố dày có quai và đáy làm bằng da bò tự nhiên. Một ngăn dây kéo lớn mặt trước. Một ngăn dây kéo hông phải, 1 túi đắp hông trái. Một ngăn dây kéo bên trong và 2 túi nhỏ.', '1', 'hiro-red-beige.jpg');
+INSERT INTO `sunstore`.`product` (`CategoryId`, `Name`, `Price`, `Size`, `Description`, `Status`, `ImageUrl`) VALUES ('1', 'TRAVELLER GREEN/BEIGE', '1234000', '29 x 45 x 13 cm - 21.5L', 'Balo vải bố dày có quai và đáy làm bằng da bò tự nhiên. Một ngăn dây kéo lớn mặt trước. Một ngăn dây kéo hông phải, 1 túi đắp hông trái. Một ngăn dây kéo bên trong và 2 túi nhỏ.', '1', 'traveller-green-beige.jpg');
+INSERT INTO `sunstore`.`product` (`CategoryId`, `Name`, `Price`, `Size`, `Description`, `Status`, `ImageUrl`) VALUES ('1', 'TRAVELLER NAVY/BEIGE', '1234000', '29 x 45 x 13 cm - 21.5L', 'Balo vải bố dày có quai và đáy làm bằng da bò tự nhiên. Một ngăn dây kéo lớn mặt trước. Một ngăn dây kéo hông phải, 1 túi đắp hông trái. Một ngăn dây kéo bên trong và 2 túi nhỏ.', '1', 'traveller-navy-beige.jpg');
+INSERT INTO `sunstore`.`product` (`CategoryId`, `Name`, `Price`, `Size`, `Description`, `Status`, `ImageUrl`) VALUES ('2', 'MAX GREEN/TAN', '750000', '38 x 37 cm - 7L', 'Hoàn hảo cho các hoạt động hằng ngày. Quai đeo da bò tự nhiên, một ngăn dây kéo mặt trước. Một túi nhỏ bên trong.', '2', 'max-green-tan.jpg');
+INSERT INTO `sunstore`.`product` (`CategoryId`, `Name`, `Price`, `Size`, `Description`, `Status`, `ImageUrl`) VALUES ('2', 'MAX RED', '750000', '38 x 37 cm - 7L', 'Hoàn hảo cho các hoạt động hằng ngày. Quai đeo da bò tự nhiên, một ngăn dây kéo mặt trước. Một túi nhỏ bên trong.', '1', 'max-red.jpg');
+INSERT INTO `sunstore`.`product` (`CategoryId`, `Name`, `Price`, `Size`, `Description`, `Status`, `ImageUrl`) VALUES ('3', 'KIRA RED/BEIGE', '850000', '15 x 25 x 7 cm - 2.7L', 'Một ngăn dây kéo mặt trước. Ngăn chính có 1 ngăn dây kéo bên trong. Dây đeo bằng cotton, khoá nhựa chất lượng cao. Có khả năng chống thấm nước. Bảo hành 1 năm.', '1', 'kira-red-beige.jpg');
+INSERT INTO `sunstore`.`product` (`CategoryId`, `Name`, `Price`, `Size`, `Description`, `Status`, `ImageUrl`) VALUES ('3', 'KIRA BLACK/TAN', '850000', '15 x 25 x 7 cm - 2.7L', 'Một ngăn dây kéo mặt trước. Ngăn chính có 1 ngăn dây kéo bên trong. Dây đeo bằng cotton, khoá nhựa chất lượng cao. Có khả năng chống thấm nước. Bảo hành 1 năm.', '1', 'kira-black-tan.jpg');
+INSERT INTO `sunstore`.`product` (`CategoryId`, `Name`, `Price`, `Size`, `Description`, `Status`, `ImageUrl`) VALUES ('4', 'BASTILLE COBALT', '879200', '29 x 25 x 6.5 cm - 5L', 'Balo vải bố dày có quai và đáy làm bằng da bò tự nhiên. Một ngăn dây kéo lớn mặt trước. Một ngăn dây kéo hông phải, 1 túi đắp hông trái. Một ngăn dây kéo bên trong và 2 túi nhỏ.', '1', 'bastille-cobalt.jpg');
+INSERT INTO `sunstore`.`product` (`CategoryId`, `Name`, `Price`, `Size`, `Description`, `Status`, `ImageUrl`) VALUES ('4', 'BENJI AIRY/RED', '879200', '29 x 25 x 6.5 cm - 5L', 'Balo vải bố dày có quai và đáy làm bằng da bò tự nhiên. Một ngăn dây kéo lớn mặt trước. Một ngăn dây kéo hông phải, 1 túi đắp hông trái. Một ngăn dây kéo bên trong và 2 túi nhỏ.', '1', 'benji-airy-red.jpg');
+-- -----------------------------------------------------
+-- Table `sunstore`.`product_image`
+-- -----------------------------------------------------
+CREATE TABLE `product_image` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `ProductId` int(11) DEFAULT NULL,
+  `ImageUrl1` nvarchar(100) DEFAULT NULL,
+  `ImageUrl2` nvarchar(100) DEFAULT NULL,
+  `ImageUrl3` nvarchar(100) DEFAULT NULL,
+  `ImageUrl4` nvarchar(100) DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  FOREIGN KEY (`ProductId`) REFERENCES `product`(`Id`)
+)
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `sunstore`.`status_product`
+-- -----------------------------------------------------
+CREATE TABLE `status_product` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `StatusId` int(11) NOT NULL,
+  `StatusName` nvarchar(100) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+)
+ENGINE = InnoDB;
+
+INSERT INTO `sunstore`.`status_product` (`StatusId`, `StatusName`) VALUES ('0', 'SOLT OUT');
+INSERT INTO `sunstore`.`status_product` (`StatusId`, `StatusName`) VALUES ('1','SELLING');
+INSERT INTO `sunstore`.`status_product` (`StatusId`, `StatusName`) VALUES ('2','SALE');
+
+-- -----------------------------------------------------
+-- Table `sunstore`.`status_category`
+-- -----------------------------------------------------
+CREATE TABLE `status_category` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `StatusId` int(11) NOT NULL,
+  `StatusName` nvarchar(100) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+)
+ENGINE = InnoDB;
+
+INSERT INTO `sunstore`.`status_category` (`StatusId`, `StatusName`) VALUES ('0', 'STOP SELL');
+INSERT INTO `sunstore`.`status_category` (`StatusId`, `StatusName`) VALUES ('1','SELLING');
+
+
+-- -----------------------------------------------------
+-- Table `sunstore`.`customers`
+-- -----------------------------------------------------
+CREATE TABLE `customers` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` nvarchar(100) DEFAULT NULL,
+  `PhoneNumer` nvarchar(45) DEFAULT NULL,
+  `Address` nvarchar(1999) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+)
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `sunstore`.`orders`
+-- -----------------------------------------------------
+CREATE TABLE `orders` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `CustomerId` int(11) DEFAULT NULL,
+  `Status` int(11) DEFAULT NULL,
+  `OrderTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`Id`),
+  FOREIGN KEY (`CustomerId`) REFERENCES `customers`(`Id`)
+)
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `sunstore`.`order_details`
+-- -----------------------------------------------------
+CREATE TABLE `order_details` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `OrderId` int(11) DEFAULT NULL,
+  `ProductId` int(11) DEFAULT NULL,
+  `UnitPrice` nvarchar(50) DEFAULT NULL,
+  `Quantity` nvarchar(50) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+)
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `sunstore`.`status_order`
+-- -----------------------------------------------------
+CREATE TABLE `status_order` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `StatusId` int(11) DEFAULT NULL,
+  `StatusName` nvarchar(50) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+)
+ENGINE = InnoDB;
+
+INSERT INTO `sunstore`.`status_order` (`StatusId`, `StatusName`) VALUES ('0', 'CANCEL');
+INSERT INTO `sunstore`.`status_order` (`StatusId`, `StatusName`) VALUES ('1', 'PROCESSING');
+INSERT INTO `sunstore`.`status_order` (`StatusId`, `StatusName`) VALUES ('2', 'SHIPPING');
+INSERT INTO `sunstore`.`status_order` (`StatusId`, `StatusName`) VALUES ('3', 'SUCCESS');
+
